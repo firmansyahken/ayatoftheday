@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --title: 32px;
+    --header: 24px;
+    --body: 15px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+@keyframes fade {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 20;
+    background-color: black;
+}
+
+.preloader.disable {
+    animation: fade 500ms ease-out;
+}
+
+.preloader .preloader_content {
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    text-align: center;
+}
+
+.preloader .preloader_content h1 {
+    font-size: var(--title);
+    color: white;
+}
+
+@keyframes move {
+    0%{
+        background-position: center;
+    }
+    25%{
+        background-position: right;
+    }
+    50%{
+        background-position: center;
+    }
+    75%{
+        background-position: left;
+    }
+    100%{
+        background-position: center;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(images/1.webp);
+    background-size: cover;
+    animation: move 13000ms infinite linear;
+}
+
+.container {
+    max-width: 1024px;
+    width: 100%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.container .main h2 {
+    font-size: var(--header);
+    margin-bottom: 50px;
+}
+
+.container .main h1 {
+    font-size: var(--title);
+    margin-bottom: 20px;
+}
+
+.container .main p {
+    font-size: var(--body);
+    color: #ccc;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.footer .medsoc {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.footer .medsoc p {
+    color: white;
+    font-size: var(--body);
+}
+
+.footer .medsoc i {
+    color: white;
+    font-size: 20px;
+}
+
+.footer .brand h3 {
+    color: white;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --title: 28px;
+        --header: 18px;
+        --body: 13px;
+    }   
+}
